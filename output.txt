@@ -1,0 +1,107 @@
+NUMPEDPed;10;;N° pedido;PED;N;CRMEVENT;;CRMEVENT.NUMPED;;;;;;;;;;;;;;NUMPED
+ESTABPEDPed;15;;Cód. estab pedido;MZ999;N;CRMEVENT;;CRMEVENT.ESTABPED;;;;;;;;;;;;;;ESTABPED
+SIGLAESTABPEDPed;15;;Sigla estab pedido;;N;TABEMPPED;;TABEMPPED.SIGLA;;;;;;;;;;;;;;SIGLAESTABPED
+TipoPed;9;E;Tipo;;N;PedBase;;PEDBASE.TIPO;;;;;;;;;;;;;;Tipo
+SituacaoPed;21;E;Situação;;N;PedBase;;PedBase.Situacao;;;;;;;;;;;;;;Situacao
+ClientePed;50;E;Cliente;;N;PedBase;;PEDBASE.CLIENTE;;;;;;;;;;;;;;Cliente
+NumPedExtPed;15;E;Nº ped externo;;N;PedBase;;PedBase.NumPedExt;;;;;;;;;;;;;;NumPedExt
+OrdemCompraPed;15;E;Ordem de compra;;N;PedBase;;PedBase.OrdemCompra;;;;;;;;;;;;;;OrdemCompra
+AosCuidadosPed;30;E;Aos cuidados;;N;PedBase;;PedBase.AosCuidados;;;;;;;;;;;;;;AosCuidados
+DataOrcamentoPed;10;E;Data orçamento;;N;PedBase;;PedBase.DataOrcamento;;;;;;;;;;;;;;DataOrcamento
+MesOrcamentoPed;7;E;Mês orçamento;AM4;N;PedBase;;(EXTRACT(YEAR FROM DATAORCAMENTO)*100)+EXTRACT(MONTH FROM DATAORCAMENTO);;;;;;;;;;;;;;MesOrcamento
+DataPedidoPed;10;E;Data pedido;;N;PedBase;;PedBase.DataPedido;;;;;;;;;;;;;;DataPedido
+MesPedidoPed;7;;Mês pedido;AM4;N;PedBase;;(EXTRACT(YEAR FROM DATAPEDIDO)*100)+EXTRACT(MONTH FROM DATAPEDIDO);;;;;;;;;;;;;;MesPedido
+DataCancelamentoPedPed;10;E;Data cancel;;N;PedBase;;PEDBASE.DATACANCELAMENTO;;;;;;;;;;;;;;DataCancelamentoPed
+DataPrevFatPed;10;E;Dt prev fat;;N;PedBase;;PedBase.DataPrevFat;;;;;;;;;;;;;;DataPrevFat
+DataproducaoPed;10;E;Data produção;;N;PedBase;;PedBase.Dataproducao;;;;;;;;;;;;;;Dataproducao
+DataEmbarquePed;10;E;Prev embarque;;N;PedBase;;PedBase.DataEmbarque;;;;;;;;;;;;;;DataEmbarque
+DataEntregaPed;10;E;Prev entrega;;N;PedBase;;PEDBASE.DATAENTREGA;;;;;;;;;;;;;;DataEntrega
+UltimaEntregaPed;10;E;Dt últ entrega;;N;PedBase;;PedBase.UltimaEntrega;;;;;;;;;;;;;;UltimaEntrega
+EntregarPed;8;E;Entregar;;N;PedBase;;PedBase.Entregar;;;;;;;;;;;;;;Entregar
+HoraEntPed;13;D;Hora entrega;HM;N;PedBase;;PedBase.HoraEnt;;;;;;;;;;;;;;HoraEnt
+HoraFabricacaoPed;13;D;Hr fabricação;HM;N;PedBase;;PedBase.HoraFabricacao;;;;;;;;;;;;;;HoraFabricacao
+DataRevisaoPed;10;E;Data revisão;;N;PedBase;;PEDBASE.DATAREVISAO;;;;;;;;;;;;;;DataRevisao
+HoraRevisaoPed;12;D;Hora revisão;HM;N;PedBase;;PEDBASE.HORAREVISAO;;;;;;;;;;;;;;HoraRevisao
+DataValidadePed;10;E;Data validade;;N;PedBase;;PEDBASE.DATAVALIDADE;;;;;;;;;;;;;;DataValidade
+ExportadoPed;10;E;Data exportação;;N;Pedbase;;Pedbase.Exportado;;;;;;;;;;;;;;Exportado
+VendedorPedPed;50;E;Vendedor pedido;;N;PedBase;;PEDBASE.VENDEDOR;;;;;;;;;;;;;;VendedorPed
+Comissionado2Ped;50;E;Comiss. 2 pedido;;N;PedBase;;PEDBASE.COMISSIONADO2;;;;;;;;;;;;;;Comissionado2
+Comissionado3Ped;50;E;Comiss. 3 pedido;;N;PedBase;;PedBase.Comissionado3;;;;;;;;;;;;;;Comissionado3
+Comissionado4Ped;50;E;Comiss. 4 pedido;;N;PedBase;;PedBase.Comissionado4;;;;;;;;;;;;;;Comissionado4
+TipoPrecoPed;13;E;Tipo preço;;N;PedBase;;PedBase.TipoPreco;;;;;;;;;;;;;;TipoPreco
+TipoFretePed;16;E;Frete por conta;;N;PedBase;;PedBase.TipoFrete;;;;;;;;;;;;;;TipoFrete
+TipoDestinoPed;12;E;Tipo destino;;N;Pedbase;;Pedbase.TipoDestino;;;;;;;;;;;;;;TipoDestino
+TransportadorPed;50;E;Transportador;;N;PedBase;;PedBase.Transportador;;;;;;;;;;;;;;Transportador
+TranspHoraPed;5;E;Hora transportador;HM;N;PedBase;;PedBase.TranspHora;;;;;;;;;;;;;;TranspHora
+TIPOFRETEREDESPPed;16;;Red. por conta;;N;PEDBASE;;PEDBASE.TIPOFRETEREDESP;;;;;;;;;;;;;;TIPOFRETEREDESP
+RedespachoPed;50;E;Redespacho;;N;PedBase;;PedBase.Redespacho;;;;;;;;;;;;;;Redespacho
+TIPOFRETEREDESP2Ped;16;;Red. 2 por conta;;N;PEDBASE;;PEDBASE.TIPOFRETEREDESP2;;;;;;;;;;;;;;TIPOFRETEREDESP2
+Redespacho2Ped;50;;Redespacho 2;;N;PedBase;;PedBase.Redespacho2;;;;;;;;;;;;;;Redespacho2
+TotalPedidoPed;12;D;Total pedido;V2;N;PedBase;;PedBase.TotalPedido;;;;;;;;;;;;;;TotalPedido
+ValFretePed;12;D;Valor frete;V2;N;PedBase;;PedBase.ValFrete;;;;;;;;;;;;;;ValFrete
+LiquidoPed;12;D;Liquido;Z2;N;PedBase;;(Pedbase.TotalPedido+PedBase.ValFrete);;;;;;;;;;;;;;Liquido
+OperacaoPedPed;35;E;Operação;;N;PedBase;;PEDBASE.OPERACAO;;;;;;;;;;;;;;OperacaoPed
+OperacaoAgrupPed;35;;Agrup operação;;N;PEDBASE;;(SELECT CASE WHEN TABOPER.AGRUPADOR <> '' THEN TABOPER.AGRUPADOR ELSE TABOPER.DESCRICAO END FROM TABOPER WHERE TABOPER.CODIGO = PEDBASE.OPERACAO);;;;;;;;;;;;;;OperacaoAgrup
+VALSEGUROPed;12;D;Vl seguro;V2;N;PEDBASE;;PEDBASE.VALSEGURO;;;;;;;;;;;;;;VALSEGURO
+ValDescItensPed;14;D;Val desc itens;V2;N;PedBase;;PedBase.ValDescItens;;;;;;;;;;;;;;ValDescItens
+ValDescontoPed;12;D;Val desconto;V2;N;PedBase;;PedBase.ValDesconto;;;;;;;;;;;;;;ValDesconto
+DescTotPed;12;D;Desc total;V2;N;Pedbase;;(0/1);;;;;;;;;;;;;;DescTot
+ValAcrescimoPed;12;D;Vl acréscimo;V2;N;PedBase;;PedBase.ValAcrescimo;;;;;;;;;;;;;;ValAcrescimo
+ValSemIpiPed;12;D;Valor sem IPI;V2;N;PedBase;;PEDBASE.TOTNF-PEDBASE.VALIPI-PEDBASE.VALFRETE;;;;;;;;;;;;;;ValSemIpi
+ValSemIpiFatPed;12;D;Vl sem IPI fat;V2;N;PedBase;;(PEDBASE.PERCFATURADO/100)*(PEDBASE.TOTNF-PEDBASE.VALIPI-PEDBASE.VALFRETE);;;;;;;;;;;;;;ValSemIpiFat
+ValSemIpiPendPed;12;D;Vl sem IPI pend;V2;N;PedBase;;(100-PEDBASE.PERCFATURADO)/100*(PEDBASE.TOTNF-PEDBASE.VALIPI-PEDBASE.VALFRETE);;;;;;;;;;;;;;ValSemIpiPend
+TotNFPed;12;D;Total NF;V2;N;PedBase;;PedBase.TotNF;;;;;;;;;;;;;;TotNF
+ValorFaturadoPed;12;D;Valor faturado;V2;N;PedBase;;PEDBASE.TOTNF*PEDBASE.PERCFATURADO/100;;;;;;;;;;;;;;ValorFaturado
+ValorPendentePed;12;D;Valor pendente;V2;N;PedBase;;(100-PEDBASE.PERCFATURADO)/100*PEDBASE.TOTNF;;;;;;;;;;;;;;ValorPendente
+PercFaturadoPed;10;D;% faturado;V2;N;PedBase;;PedBase.PercFaturado;;;;;;;;;;;;;;PercFaturado
+ValorIPIPed;12;D;Valor IPI;V2;N;Pedbase;;PedBase.ValIpi;;;;;;;;;;;;;;ValorIPI
+ValICMSPed;12;D;Valor ICMS;V2;N;PedBase;;PedBase.ValICMS;;;;;;;;;;;;;;ValICMS
+VALICMSSTPed;12;D;Valor ICMS ST;V2;N;PEDBASE;;PEDBASE.VALICMSST;;;;;;;;;;;;;;VALICMSST
+valPisSimPed;12;D;Valor PIS;V2;N;PedBase;;PedBase.valPisSim;;;;;;;;;;;;;;valPisSim
+ValCofinsSimPed;12;D;Valor COFINS;V2;N;PedBase;;PedBase.ValCofinsSim;;;;;;;;;;;;;;ValCofinsSim
+ValCustoSimPed;12;D;Valor custo;V2;N;PedBase;;PedBase.ValCustoSim;;;;;;;;;;;;;;ValCustoSim
+PesoBPedPed;12;D;Peso bruto;V3;N;PEDBASE;;POSTO NO CREATE;;;;;;;;;;;;;;PesoBPed
+PesoLPedPed;12;D;Peso líquido;V3;N;PEDBASE;;POSTO NO CREATE;;;;;;;;;;;;;;PesoLPed
+DataAprovPed;14;E;Data Aprovação;;N;Pedbase;;Pedbase.DataAprov;;;;;;;;;;;;;;DataAprov
+ObsCabPed;50;E;Observações cabeçalho;;N;PedBase;S;S.ObsCab;;;;;;;;;;;;;;ObsCab
+ObservacoesPed;50;E;Observações rodapé;;N;PedBase;S;S.Observacoes;;;;;;;;;;;;;;Observacoes
+ObsPCPPed;50;E;Observações PCP;;N;PedBase;S;S.ObsPCP;;;;;;;;;;;;;;ObsPCP
+AreaRespPed;15;E;Responsável;;N;PedBase;;PedBase.AreaResp;;;;;;;;;;;;;;AreaResp
+DtAreaRespPed;10;E;Data resp.;;N;PedBase;;PedBase.DtAreaResp;;;;;;;;;;;;;;DtAreaResp
+RetencaoPisPed;12;D;Retenção PIS;V2;N;PedBase;;PedBase.RetencaoPis;;;;;;;;;;;;;;RetencaoPis
+RetencaoCofinsPed;15;D;Retenção COFINS;V2;N;PedBase;;PedBase.RetencaoCofins;;;;;;;;;;;;;;RetencaoCofins
+DespAcessPed;16;D;Desp. Acessórias;V2;N;PedBase;;PedBase.DespAcess;;;;;;;;;;;;;;DespAcess
+DataInstalacaoPed;10;E;Dt instalação;;N;PedBase;;PedBase.DataInstalacao;;;;;;;;;;;;;;DataInstalacao
+EncQtdPed;12;D;Qtd volumes;VQ;N;Pedbase;;Pedbase.EncQtd;;;;;;;;;;;;;;EncQtd
+EncEspeciePed;10;E;Especie;;N;Pedbase;;Pedbase.EncEspecie;;;;;;;;;;;;;;EncEspecie
+EncMarcaPed;10;E;Marca;;N;PedBase;;PedBase.EncMarca;;;;;;;;;;;;;;EncMarca
+EncNumeroPed;10;E;Num volumes;;N;Pedbase;;Pedbase.EncNumero;;;;;;;;;;;;;;EncNumero
+EstabDestinoPed;30;;Estab. Destino;;N;PedBase;;PedBase.EstabDestino;;;;;;;;;;;;;;EstabDestino
+ContatoPorPed;11;;Contato por;;N;PedBase;;PedBase.ContatoPor;;;;;;;;;;;;;;ContatoPor
+TotalCubagemPed;10;D;Cubagem;V3;N;PedBase;;PedBase.TotalCubagem;;;;;;;;;;;;;;TotalCubagem
+FaixaComiPed;14;;Faixa comis;;N;PedBase;;PedBase.FaixaComi;;;;;;;;;;;;;;FaixaComi
+LayoutCargaPed;12;D;Layout carga;M999999;N;PEDBASE;;PEDBASE.LayoutCarga;;;;;;;;;;;;;;LayoutCarga
+EstabCondicionalPed;3;D;Estab. condicional;MZ99;N;PEDBASE;;PEDBASE.EstabCondicional;;;;;;;;;;;;;;EstabCondicional
+PERCDESCABATICMSPed;22;D;Perc. desc. abat. ICMS;V2;N;Pedbase;;Pedbase.PERCDESCABATICMS;;;;;;;;;;;;;;PERCDESCABATICMS
+VALDESCABATICMSPed;16;D;Desc. abat. ICMS;V2;N;Pedbase;;Pedbase.VALDESCABATICMS;;;;;;;;;;;;;;VALDESCABATICMS
+CUSTOFRETETERCPed;12;D;Val frete de terceiros;V2;N;PEDBASE;;PEDBASE.CUSTOFRETETERC;;;;;;;;;;;;;;CUSTOFRETETERC
+PERCFRETETERCPed;12;D;% frete de terceiros;V2;N;PEDBASE;;PEDBASE.PERCFRETETERC;;;;;;;;;;;;;;PERCFRETETERC
+AjusteCustoProdPed;12;D;Adic. custo produção;V2;N;PEDBASE;;PEDBASE.AjusteCustoProd;;;;;;;;;;;;;;AjusteCustoProd
+DATAQUICOMIS1Ped;14;;Dt qui comis vend;;N;PEDBASE;;PEDBASE.DATAQUICOMIS1;;;;;;;;;;;;;;DATAQUICOMIS1
+DATAQUICOMIS2Ped;14;;Dt qui comis comiss2;;N;PEDBASE;;PEDBASE.DATAQUICOMIS2;;;;;;;;;;;;;;DATAQUICOMIS2
+DATAQUICOMIS3Ped;14;;Dt qui comis comiss3;;N;PEDBASE;;PEDBASE.DATAQUICOMIS3;;;;;;;;;;;;;;DATAQUICOMIS3
+DATAQUICOMIS4Ped;14;;Dt qui comis comiss4;;N;PEDBASE;;PEDBASE.DATAQUICOMIS4;;;;;;;;;;;;;;DATAQUICOMIS4
+BASECOMISSAOPed;14;D;Base comissão;V2;N;PEDBASE;;PEDBASE.BASECOMISSAO;;;;;;;;;;;;;;BASECOMISSAO
+PAGACOMISSAOPed;20;;Tp pag comis vend;;N;PEDBASE;;PEDBASE.PAGACOMISSAO;;;;;;;;;;;;;;PAGACOMISSAO
+PAGACOMISSAO2Ped;20;;Tp pag comis comiss2;;N;PEDBASE;;PEDBASE.PAGACOMISSAO2;;;;;;;;;;;;;;PAGACOMISSAO2
+PAGACOMISSAO3Ped;20;;Tp pag comis comiss3;;N;PEDBASE;;PEDBASE.PAGACOMISSAO3;;;;;;;;;;;;;;PAGACOMISSAO3
+PAGACOMISSAO4Ped;20;;Tp pag comis comiss4;;N;PEDBASE;;PEDBASE.PAGACOMISSAO4;;;;;;;;;;;;;;PAGACOMISSAO4
+ESTABCADPed;15;;Estab. cadastro;;N;PEDBASE;;PEDBASE.ESTABCAD;;;;;;;;;;;;;;ESTABCAD
+ENTENDERPed;40;;Endereço de entrega;;N;PEDBASE;;PEDBASE.ENTENDER;;;;;;;;;;;;;;ENTENDER
+ENTBAIRROPed;30;;Bairro de entrega;;N;PEDBASE;;PEDBASE.ENTBAIRRO;;;;;;;;;;;;;;ENTBAIRRO
+ENTCEPPed;15;;CEP de entrega;M99999-999;N;PEDBASE;;PEDBASE.ENTCEP;;;;;;;;;;;;;;ENTCEP
+ENTCGCPed;20;;CPF/CNPJ de entrega;;N;PEDBASE;;PEDBASE.ENTCGC;;;;;;;;;;;;;;ENTCGC
+ENTIEPed;20;;IE de entrega;;N;PEDBASE;;PEDBASE.ENTIE;;;;;;;;;;;;;;ENTIE
+ENTPONTOREFERENCIAPed;50;;Ponto de referência;;N;PEDBASE;S;S.ENTPONTOREFERENCIA;;;;;;;;;;;;;;ENTPONTOREFERENCIA
+MotivoCancelPed;4;;Motivo do cancelamento;M9999;N;PEDBASE;;PEDBASE.MotivoCancel;;;;;;;;;;;;;;MotivoCancel
+ObsCancelPed;50;;Obs. motivo do canc. do pedido;;N;PEDBASE;S;S.ObsCancel;;;;;;;;;;;;;;ObsCancel
